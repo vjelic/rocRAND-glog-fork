@@ -1,0 +1,760 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-88db1a16-1827-4745-9be6-322f0ae6c681",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-b9f1f596-026d-4dee-87b2-d256b3ee5b58",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-05e46c2d-77a5-4a6a-85cd-7d7a2fe6b4e4",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-858e72d1-e4aa-4f76-baef-cb2513500670",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-ba79e7e1-a7a1-4828-a7d2-53fc1b1a52e2",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-c5c2310c-eebb-43d4-b9b6-41ee6b8ef694",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-d638427c-c56f-40ca-ab6c-9309bcc95848",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-8d8bf14e-e544-47ab-9f85-8489715a3e9d",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-2d0a1f8e-c10a-413f-8512-663c7a1a17c5",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-48452994-baa0-49ea-8f2c-fcfd72429325",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-1f311b11-3afb-496b-bc7d-79c5265f9e88",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-8605259c-30f3-4a51-9a62-6f7f46d9b2a6",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-ba326d04-778c-455c-bfdb-42308b29ec68",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            },
+            {
+              "id": "glog-9484792a-2231-4acd-9702-aa1d403e26c4",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially in security-sensitive applications. Functions like `rand()` from the C standard library are not suitable for cryptographic purposes because they produce predictable sequences of numbers. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, but for cryptographic purposes, consider using libraries like OpenSSL or libsodium that offer cryptographically secure random number generation.\n\n### Source Code Fix Recommendation\n\n#### Vulnerable Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <cstdlib> // For rand()\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_shuffle(vec.begin(), vec.end());\n}\n```\n\n#### Fixed Code\n\n```cpp\n#include <algorithm>\n#include <vector>\n#include <random> // For std::random_device and std::mt19937\n\nvoid shuffleVector(std::vector<int>& vec) {\n    std::random_device rd;\n    std::mt19937 g(rd());\n    std::shuffle(vec.begin(), vec.end(), g);\n}\n```\n\n### Library Dependencies\n\n- `<algorithm>`: Required for `std::shuffle`.\n- `<vector>`: Required for using `std::vector`.\n- `<random>`: Required for `std::random_device` and `std::mt19937`.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS148264"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-88db1a16-1827-4745-9be6-322f0ae6c681",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 402,
+                  "startColumn": 34,
+                  "endLine": 402,
+                  "endColumn": 42,
+                  "charOffset": 18713,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-b9f1f596-026d-4dee-87b2-d256b3ee5b58",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 393,
+                  "startColumn": 34,
+                  "endLine": 393,
+                  "endColumn": 42,
+                  "charOffset": 18344,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-05e46c2d-77a5-4a6a-85cd-7d7a2fe6b4e4",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 394,
+                  "startColumn": 34,
+                  "endLine": 394,
+                  "endColumn": 42,
+                  "charOffset": 18408,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-858e72d1-e4aa-4f76-baef-cb2513500670",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 389,
+                  "startColumn": 35,
+                  "endLine": 389,
+                  "endColumn": 43,
+                  "charOffset": 18188,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-ba79e7e1-a7a1-4828-a7d2-53fc1b1a52e2",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 376,
+                  "startColumn": 35,
+                  "endLine": 376,
+                  "endColumn": 43,
+                  "charOffset": 17669,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-c5c2310c-eebb-43d4-b9b6-41ee6b8ef694",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 371,
+                  "startColumn": 34,
+                  "endLine": 371,
+                  "endColumn": 42,
+                  "charOffset": 17443,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-d638427c-c56f-40ca-ab6c-9309bcc95848",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 381,
+                  "startColumn": 35,
+                  "endLine": 381,
+                  "endColumn": 43,
+                  "charOffset": 17891,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-8d8bf14e-e544-47ab-9f85-8489715a3e9d",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 380,
+                  "startColumn": 35,
+                  "endLine": 380,
+                  "endColumn": 43,
+                  "charOffset": 17826,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-2d0a1f8e-c10a-413f-8512-663c7a1a17c5",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 363,
+                  "startColumn": 35,
+                  "endLine": 363,
+                  "endColumn": 43,
+                  "charOffset": 17147,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-48452994-baa0-49ea-8f2c-fcfd72429325",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 362,
+                  "startColumn": 35,
+                  "endLine": 362,
+                  "endColumn": 43,
+                  "charOffset": 17082,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-1f311b11-3afb-496b-bc7d-79c5265f9e88",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 345,
+                  "startColumn": 34,
+                  "endLine": 345,
+                  "endColumn": 42,
+                  "charOffset": 16407,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-8605259c-30f3-4a51-9a62-6f7f46d9b2a6",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 350,
+                  "startColumn": 35,
+                  "endLine": 350,
+                  "endColumn": 43,
+                  "charOffset": 16630,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-ba326d04-778c-455c-bfdb-42308b29ec68",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 358,
+                  "startColumn": 35,
+                  "endLine": 358,
+                  "endColumn": 43,
+                  "charOffset": 16925,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9484792a-2231-4acd-9702-aa1d403e26c4",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Weak or Non-Cryptographic Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "library/src/rng/mt19937_octo_engine.hpp"
+                },
+                "region": {
+                  "startLine": 336,
+                  "startColumn": 34,
+                  "endLine": 336,
+                  "endColumn": 42,
+                  "charOffset": 16024,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "shuffle(",
+                    "rendered": {
+                      "text": "shuffle(",
+                      "markdown": "`shuffle(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
+            ]
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
